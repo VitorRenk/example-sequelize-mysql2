@@ -19,6 +19,7 @@ const Address = db.define("Address", {
   },
 });
 
+User.hasMany(Address); // Um usuário pode ter vários endereços
 Address.belongsTo(User); // Um endereço pertence a um usuário
 
 module.exports = Address;

@@ -56,9 +56,13 @@ app.post("/users/delete/:id", async (req, res) => {
 app.get("/users/edit/:id", async (req, res) => {
   const id = req.params.id;
 
-  const user = await User.findOne({ raw: true, where: { id: id } });
+  try {
+    const user = await User.findOne({ include: Address, where: { id: id } });
 
-  res.render("useredit", { user });
+    res.render("useredit", { user: user.get({ plain: true }) });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.post("/users/update", async (req, res) => {
@@ -99,6 +103,15 @@ app.post("/address/create", async (req, res) => {
   };
 
   await Address.create(address);
+
+  res.redirect("/");
+});
+
+app.post("/address/delete", async (req, res) => {
+  const UserId = req.body.UserId;
+  const id = req.body.id;
+
+  await Address.destroy({ where: { id: id } });
 
   res.redirect("/");
 });

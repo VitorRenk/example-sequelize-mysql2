@@ -188,3 +188,20 @@ input[type="submit"]:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.adress-list {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #ccc;
+}
+
+.address-list div {
+  display: flex;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+.address-list form {
+  margin-left: 1em;
+}
