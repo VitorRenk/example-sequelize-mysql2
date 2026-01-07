@@ -162,3 +162,29 @@ input[type="submit"]:hover {
   border-color: #004085;
   color: #004085;
 }
+
+/* Address */
+.address-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.address-container h2 {
+  width: 100%;
+  margin-bottom: 0.8em;
+}
+
+.address-container form {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  flex: 1 1 29%;
+  max-width: 29%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
