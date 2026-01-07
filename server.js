@@ -104,7 +104,7 @@ app.post("/address/create", async (req, res) => {
 
   await Address.create(address);
 
-  res.redirect("/");
+  res.redirect(`/users/edit/${UserId}`);
 });
 
 app.post("/address/delete", async (req, res) => {
@@ -113,7 +113,7 @@ app.post("/address/delete", async (req, res) => {
 
   await Address.destroy({ where: { id: id } });
 
-  res.redirect("/");
+  res.redirect(`/users/edit/${UserId}`);
 });
 
 app.get("/", async (req, res) => {

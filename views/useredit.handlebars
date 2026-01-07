@@ -59,8 +59,8 @@
         {{this.number}}
         -
         {{this.city}}
-        <form action="/adress/delete" method="POST">
-          <input type="hidden" name="UserId" value="{{user.UserId}}" />
+        <form action="/address/delete" method="POST">
+          <input type="hidden" name="UserId" value="{{this.UserId}}" />
           <input type="hidden" name="id" value="{{this.id}}" />
           <input type="submit" value="Excluir" />
         </form>
